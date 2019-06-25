@@ -1,30 +1,30 @@
 import React from 'react'
+import { observer } from 'mobx-react'
 import { Layout, Menu, Icon } from 'antd';
 import MyContent from './layout/MyContent'
 import Footer from './layout/Footer'
 import './App.scss'
 import 'antd/dist/antd.css'
+import MenuStore from './store/MenuStore'
+
 
 const { Header, Sider } = Layout
 const { SubMenu } = Menu
 
-class App extends React.Component {
-  state = {
-    collapsed: false,
-  };
-  toggle = () => {
-    this.setState({
-      collapsed: !this.state.collapsed,
-    });
+const App = () => {
+  let {state: {collapsed}, actions: {showToggle}} = MenuStore
+  console.log('top', collapsed)
+  const toggle = () => {
+    showToggle(!collapsed)
+    console.log('collapsed', collapsed)
   }
-  render() {
     return (
       <React.Fragment>
         <Layout>
           <Sider
             trigger={null}
             collapsible
-            collapsed={this.state.collapsed}
+            collapsed={collapsed}
           >
           <div className="logo" />
            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
@@ -61,8 +61,8 @@ class App extends React.Component {
             <Header className="header">
               <Icon
                 className="trigger"
-                type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
-                onClick={this.toggle}
+                onClick={() => toggle()}
+                type={collapsed ? 'menu-unfold' : 'menu-fold'}
               />
             </Header>
             <MyContent />
@@ -70,27 +70,7 @@ class App extends React.Component {
         </Layout>
         <Footer />
       </React.Fragment>
-    );
-  }
+    )
 }
 
-export default App;
-
-
-// import React from 'react'
-// import Login from './page/Login/Login'
-// import './App.scss'
-// import 'antd/dist/antd.css'
-
-
-// class App extends React.Component {
-//   render() {
-//     return (
-//       <React.Fragment>
-//         <Login />
-//       </React.Fragment>
-//     )
-//   }
-// }
-
-// export default App;
+export default observer(App);
