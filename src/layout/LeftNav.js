@@ -1,18 +1,26 @@
 import React from 'react';
+import { observer } from 'mobx-react'
 import { Layout, Menu, Icon } from 'antd';
+import MenuStore from '../store/MenuStore'
 
-const { Header, Sider } = Layout
+const { Sider } = Layout
 const { SubMenu } = Menu
 
-const LeftNav = () => {
-  this.state = {
-    collapsed: false,
-  };
+
+
+const LeftNav = (props) => {
+  let {state: {collapsed}} = MenuStore
+  console.log('top', collapsed)
+
+  // const goToNextId = () => {
+  //   props.history.push(`/manage-news`);
+  // }
   return (
-    <Sider
-            trigger={null}
+    <div>
+      <Sider
+        trigger={null}
             collapsible
-            collapsed={this.state.collapsed}
+            collapsed={collapsed}
           >
           <div className="logo" />
            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
@@ -26,9 +34,9 @@ const LeftNav = () => {
             </Menu.Item>
             <SubMenu
               key="sub1"
-              title={<span><Icon type="user" /><span>User</span></span>}
+              title={<span><Icon type="upload" /><span>News</span></span>}
             >
-              <Menu.Item key="3">Tom</Menu.Item>
+              <Menu.Item key="3">Upload News</Menu.Item>
               <Menu.Item key="4">Bill</Menu.Item>
               <Menu.Item key="5">Alex</Menu.Item>
             </SubMenu>
@@ -45,7 +53,8 @@ const LeftNav = () => {
             </Menu.Item>
           </Menu>
           </Sider>
-  )
+            </div>
+        )
 }
 
-export default LeftNav;
+export default observer(LeftNav);

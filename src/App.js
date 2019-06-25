@@ -4,7 +4,6 @@ import { Layout, Menu, Icon } from 'antd';
 import MyContent from './layout/MyContent'
 import Footer from './layout/Footer'
 import './App.scss'
-import 'antd/dist/antd.css'
 import MenuStore from './store/MenuStore'
 
 
@@ -38,9 +37,9 @@ const App = () => {
             </Menu.Item>
             <SubMenu
               key="sub1"
-              title={<span><Icon type="user" /><span>User</span></span>}
+              title={<span><Icon type="upload" /><span>News</span></span>}
             >
-              <Menu.Item key="3">Tom</Menu.Item>
+              <Menu.Item key="3">Upload News</Menu.Item>
               <Menu.Item key="4">Bill</Menu.Item>
               <Menu.Item key="5">Alex</Menu.Item>
             </SubMenu>
