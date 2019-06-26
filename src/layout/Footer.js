@@ -7,7 +7,7 @@ const getYear = () => {
 const Footer = () => {
   return (
     <footer>
-      Copyright &copy; {getYear()}  Big Bang Design. All rights reserved.
+      Copyright &copy; {getYear()}  XXXXX. All rights reserved.
     </footer>
   );
 };

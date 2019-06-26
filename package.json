@@ -5,6 +5,7 @@
   "dependencies": {
     "antd": "^3.19.7",
     "babel-polyfill": "^6.26.0",
+    "eslint-loader": "^2.1.2",
     "i": "^0.3.6",
     "install": "^0.12.2",
     "mobx": "^5.10.1",
