@@ -8,7 +8,7 @@ const { Sider } = Layout
 
 const LeftNav = (props) => {
   let {state: {collapsed}} = MenuStore
-  console.log('top', collapsed)
+  console.log('Top collapsed: LeftNav >>>>>', collapsed)
   return (
     <div className="left-menu-container">
       <Sider

@@ -1,7 +1,7 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import { Select, Input, Button } from 'antd'
-// import EmailListStore from '../../store/EmailListStore'
+import EmailListStore from '../../store/EmailListStore'
 
 const Option = Select.Option
 //Select
@@ -9,33 +9,19 @@ function handleChange(value) {
   console.log(`selected ${value}`);
 }
 
-// const myProfession = observer(() => {
-//   console.log('asd', myProfession)
-//   return(
-//     <div>
-//       <Option value="Analyst">Analyst</Option>
-//                 <Option value="Fund Manager">Fund Manager</Option>
-//                 <Option value="Press/Media">Press/Media</Option>
-//                 <Option value="Retail Investor">Retail Investor</Option>
-//                 <Option value="Others">Others</Option>
-//                 </div>
-//     // <div>
-//     //   {professionData.map((item, index) => {
-//     //       return(
-//     //         <div key={index} >
-//     //         {/* <Option value={item.label}>{item.label}</Option> */}
-//     //         </div>
-//     //       )
-//     //     })
-//     //   }
-//     // </div>
-//     )
-//   }
-// )
-
 const FillEmail = () => {
-  // let { state: { professionData }, actions: {}} = EmailListStore
-  // console.log('EmailListStore >>>>>', EmailListStore)
+  let { state: { professionData }, actions: {}} = EmailListStore
+  console.log('EmailListStore >>>>>', JSON.parse(JSON.stringify(EmailListStore)))
+  console.log('professionData >>>>>', JSON.parse(JSON.stringify(professionData)))
+  let jsxOption = null
+  if(professionData && professionData.length>0){
+    jsxOption = professionData.map((item, index) => {
+      return(
+        <Option key={index}>{item.label}</Option>
+      )
+    })
+  }
+
   return (
     <div>
       <table className="table-add-email">
@@ -73,11 +59,16 @@ const FillEmail = () => {
                 onChange={handleChange}
                 filterOption={(input, option) => option.props.children.toLowerCase().indexOf(input.toLowerCase()) >= 0}
               >
-                <Option value="Analyst">Analyst</Option>
-                <Option value="Fund Manager">Fund Manager</Option>
-                <Option value="Press/Media">Press/Media</Option>
-                <Option value="Retail Investor">Retail Investor</Option>
-                <Option value="Others">Others</Option>
+          
+              {/* {professionData.map((item, index) => {
+                return(
+                  <Option key={index}>{item.label}</Option>
+                )
+              })} */}
+
+              { jsxOption }
+            
+
               </Select>  
             </td>
           </tr>
