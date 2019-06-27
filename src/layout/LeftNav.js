@@ -1,15 +1,18 @@
 import React from 'react';
+import { Link } from "react-router-dom"
 import { observer } from 'mobx-react'
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon } from 'antd'
 import MenuStore from '../store/MenuStore'
 
 const { Sider } = Layout
 // const { SubMenu } = Menu
 
-const LeftNav = (props) => {
+
+const LeftNav = () => {
   let {state: {collapsed}} = MenuStore
   console.log('Top collapsed: LeftNav >>>>>', collapsed)
   return (
+
     <div className="left-menu-container">
       <Sider
         trigger={null}
@@ -19,17 +22,26 @@ const LeftNav = (props) => {
           <div className="logo" />
            <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
             <Menu.Item key="1">
+            <Link to='/dashboard'>
               <Icon type="pie-chart" />
               <span>Dashboard</span>
+              </Link>
             </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="upload" />
-              <span><a href="manage-news">Manage News</a></span>
+            <Menu.Item 
+              key="2" 
+              >
+              <Link to='/manage-news'>
+                <Icon type="upload" />
+                <span>Manage News</span>
+              </Link>
             </Menu.Item>
             <Menu.Item key="3">
-              <Icon type="mail" />
-              <span><a href="email-list">Email List</a></span>
+              <Link to='/email-list'>
+                <Icon type="mail" />
+                <span>Email List</span>
+              </Link>
             </Menu.Item>
+
             {/* <SubMenu
               key="sub1"
               title={<span><Icon type="team" /><span>Team</span></span>}
@@ -41,6 +53,7 @@ const LeftNav = (props) => {
           </Menu>
           </Sider>
             </div>
+    
         )
 }
 
