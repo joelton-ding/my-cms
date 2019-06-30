@@ -16,6 +16,11 @@ const TableColumn = () => {
               <a href="#1"><Icon type="delete" /> Delete</a>
             </Popconfirm>
           </li>
+          <li>
+            <Popconfirm title="Do Email To Subscribe?" okText="Yes" cancelText="No">
+              <a href="#1"><Icon type="inbox" />Do Email Blast</a>
+            </Popconfirm>
+          </li>
         </ul>
       </td>
     </tr>

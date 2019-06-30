@@ -16,37 +16,37 @@ const Login = Form.create()(observer(props => {
     });
   }
 
-  return(
+  return (
     <LoginContainer>
       <div className="container">
         <h1>Content Management System</h1>
         <Form onSubmit={handleSubmit} className="login-form">
-        <FormItem>
-          {getFieldDecorator('userName', {
-            rules: [{ required: true, message: 'Please input your username!' }],
-          })(
-            <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Username" />
-          )}
-        </FormItem>
-        <FormItem>
-          {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Please input your Password!' }],
-          })(
-            <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="Password" />
-          )}
-        </FormItem>
-        <FormItem>
-          {getFieldDecorator('remember', {
-            valuePropName: 'checked',
-            initialValue: true,
-          })(
-            <Checkbox>Remember me</Checkbox>
-          )}
-          <Button type="primary" htmlType="submit" className="login-form-button">
-            Log in
-          </Button>
-        </FormItem>
-      </Form>
+          <FormItem>
+            {getFieldDecorator('userName', {
+              rules: [{ required: true, message: 'Please input your username!' }],
+            })(
+              <Input prefix={<Icon type="user" style={{ fontSize: 13 }} />} placeholder="Username" />
+            )}
+          </FormItem>
+          <FormItem>
+            {getFieldDecorator('password', {
+              rules: [{ required: true, message: 'Please input your Password!' }],
+            })(
+              <Input prefix={<Icon type="lock" style={{ fontSize: 13 }} />} type="password" placeholder="Password" />
+            )}
+          </FormItem>
+          <FormItem>
+            {getFieldDecorator('remember', {
+              valuePropName: 'checked',
+              initialValue: true,
+            })(
+              <Checkbox>Remember me</Checkbox>
+            )}
+            <Button type="primary" htmlType="submit" className="login-form-button">
+              <a href="/dashboard">Log in</a>
+            </Button>
+          </FormItem>
+        </Form>
       </div>
     </LoginContainer>
   )
