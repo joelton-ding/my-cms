@@ -1,4 +1,5 @@
 import LoginPage from '../page/Login/LoginPage'
+import LogoutPage from '../page/Logout/LogoutPage'
 import DashboardPage from '../page/Dashboard/DashboardPage'
 import ManageNewsPage from '../page/News/ManageNewsPage'
 import AddNewsPage from '../page/News/AddNewsPage'
@@ -7,6 +8,7 @@ import AddEmailPage from '../page/Email/AddEmailPage'
 
 const indexRoutes = [
   { path: '/', name: 'login', component: LoginPage },
+  { path: '/logout', name: 'logout', component: LogoutPage },
   { path: '/dashboard', name: 'dashboard', component: DashboardPage },
   { path: '/manage-news', name: 'manage-news', component: ManageNewsPage },
   { path: '/add-news', name: 'add-news', component: AddNewsPage },

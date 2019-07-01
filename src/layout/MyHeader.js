@@ -1,5 +1,6 @@
 import React from 'react';
 import { observer } from 'mobx-react'
+import { Link } from 'react-router-dom'
 import { Layout, Icon, Avatar } from 'antd'
 import MenuStore from '../store/MenuStore'
 
@@ -22,13 +23,14 @@ const MyHeader = () => {
         type={collapsed ? 'menu-unfold' : 'menu-fold'}
       />
       <div className="login-container">
-        <button class="dropbtn">
+        <button className="dropbtn">
           <Avatar style={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>A</Avatar>
           <span className="name">Alex Ong</span>
         </button>
-        <div class="dropdown-content">
+        <div className="dropdown-content">
           <ul>
-            <li><a href="#1"><Icon type="logout" /> Logout</a></li>
+       
+            <li><Link to="/logout"><Icon type="logout" /> Logout</Link></li>
           </ul>
         </div>
       </div>

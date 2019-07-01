@@ -11,7 +11,6 @@ const { Sider } = Layout
 const LeftNav = (props) => {
   let { state: { collapsed } } = MenuStore
   console.log('Top collapsed: LeftNav >>>>>', collapsed)
-
   console.log('Link >>>>>', props.location ? props.location.pathname : '=====')
 
   // let loadMenuStyle = menu => {
@@ -34,7 +33,7 @@ const LeftNav = (props) => {
         <Menu theme="dark" mode="inline">
           {/* <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline"></Menu> */}
           <Menu.Item key="1">
-            <Link to='/'>
+            <Link to='/dashboard'>
               <Icon type="pie-chart" />
               <span>Dashboard</span>
             </Link>
