@@ -29,7 +29,6 @@ const MyHeader = () => {
         </button>
         <div className="dropdown-content">
           <ul>
-       
             <li><Link to="/logout"><Icon type="logout" /> Logout</Link></li>
           </ul>
         </div>

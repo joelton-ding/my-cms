@@ -4,6 +4,7 @@ import 'babel-polyfill'
 import {createBrowserHistory} from 'history'
 import {Router, Route, Switch, Redirect } from 'react-router'
 import indexRoutes from './routes'
+import './fonts/stylesheet.css'
 import 'antd/dist/antd.css'
 import './index.scss'
 
