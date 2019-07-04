@@ -78,7 +78,8 @@ const LoginContainer = styled('div')`
   background-size: cover;
   height: 100vh;
   width: 100%;
-  padding-top: 12%;
+  min-height: 600px;
+  padding-top: 10%;
   .layer-mask {
     background: rgba(0,0,0,.3);
     position: absolute;

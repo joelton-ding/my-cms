@@ -29,7 +29,7 @@ const MyHeader = () => {
         </button>
         <div className="dropdown-content">
           <ul>
-            <li><Link to="/logout"><Icon type="logout" /> Logout</Link></li>
+            <li><Link to="/"><Icon type="logout" /> Logout</Link></li>
           </ul>
         </div>
       </div>
